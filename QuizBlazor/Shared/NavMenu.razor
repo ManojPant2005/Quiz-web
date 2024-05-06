@@ -1,0 +1,27 @@
+﻿<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">Quizzing</a>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+
+              <MudNavLink Href="" Match="NavLinkMatch.Prefix">
+                    <MudIcon Icon="@Icons.Material.Filled.Quiz" /> My QuizSection
+                </MudNavLink>
+
+            <MudNavLink Href="/quizcard" Match="NavLinkMatch.Prefix">
+                    <MudIcon Icon="@Icons.Material.Filled.List" /> QuizBoard
+                </MudNavLink>
+           
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
